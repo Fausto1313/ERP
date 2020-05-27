@@ -4,46 +4,13 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "res_lang".
- *
- * @property int $id TRIAL
- * @property string $name TRIAL
- * @property string $code TRIAL
- * @property string|null $iso_code TRIAL
- * @property string $url_code TRIAL
- * @property int|null $active TRIAL
- * @property string $direction TRIAL
- * @property string $date_format TRIAL
- * @property string $time_format TRIAL
- * @property string $week_start TRIAL
- * @property string $grouping TRIAL
- * @property string $decimal_point TRIAL
- * @property string|null $thousands_sep TRIAL
- * @property int|null $create_uid TRIAL
- * @property string|null $create_date TRIAL
- * @property int|null $write_uid TRIAL
- * @property string|null $write_date TRIAL
- * @property string|null $trial477 TRIAL
- *
- * @property CrmLead[] $crmLeads
- * @property ResUsers $createU
- * @property ResUsers $writeU
- * @property WebsiteVisitor[] $websiteVisitors
- */
 class ResLang extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return 'res_lang';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -57,9 +24,6 @@ class ResLang extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function attributeLabels()
     {
         return [
@@ -94,40 +58,21 @@ class ResLang extends \yii\db\ActiveRecord
         return $this->hasMany(CrmLead::className(), ['lang_id' => 'id']);
     }
 
-    /**
-     * Gets query for [[CreateU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getCreateU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'create_uid']);
     }
 
-    /**
-     * Gets query for [[WriteU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getWriteU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'write_uid']);
     }
 
-    /**
-     * Gets query for [[WebsiteVisitors]].
-     *
-     * @return \yii\db\ActiveQuery|WebsiteVisitorQuery
-     */
     public function getWebsiteVisitors()
     {
         return $this->hasMany(WebsiteVisitor::className(), ['lang_id' => 'id']);
     }
 
-    /**
-     * {@inheritdoc}
-     * @return ResLangQuery the active query used by this AR class.
-     */
     public static function find()
     {
         return new ResLangQuery(get_called_class());

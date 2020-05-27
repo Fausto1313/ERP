@@ -3,48 +3,13 @@
 namespace app\models;
 
 use Yii;
-
-/**
- * This is the model class for table "website_visitor".
- *
- * @property int $id TRIAL
- * @property string|null $name TRIAL
- * @property string $access_token TRIAL
- * @property int|null $active TRIAL
- * @property int|null $website_id TRIAL
- * @property int|null $partner_id TRIAL
- * @property int|null $country_id TRIAL
- * @property int|null $lang_id TRIAL
- * @property string|null $timezone TRIAL
- * @property int|null $visit_count TRIAL
- * @property string|null $create_date TRIAL
- * @property string|null $last_connection_datetime TRIAL
- * @property int|null $create_uid TRIAL
- * @property int|null $write_uid TRIAL
- * @property string|null $write_date TRIAL
- * @property int|null $livechat_operator_id TRIAL
- * @property string|null $trial588 TRIAL
- *
- * @property ResCountry $country
- * @property ResUsers $createU
- * @property ResLang $lang
- * @property ResPartner $livechatOperator
- * @property ResPartner $partner
- * @property ResUsers $writeU
- */
 class WebsiteVisitor extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return 'website_visitor';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -63,9 +28,6 @@ class WebsiteVisitor extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function attributeLabels()
     {
         return [
@@ -89,70 +51,36 @@ class WebsiteVisitor extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * Gets query for [[Country]].
-     *
-     * @return \yii\db\ActiveQuery|ResCountryQuery
-     */
     public function getCountry()
     {
         return $this->hasOne(ResCountry::className(), ['id' => 'country_id']);
     }
 
-    /**
-     * Gets query for [[CreateU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getCreateU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'create_uid']);
     }
 
-    /**
-     * Gets query for [[Lang]].
-     *
-     * @return \yii\db\ActiveQuery|ResLangQuery
-     */
     public function getLang()
     {
         return $this->hasOne(ResLang::className(), ['id' => 'lang_id']);
     }
 
-    /**
-     * Gets query for [[LivechatOperator]].
-     *
-     * @return \yii\db\ActiveQuery|ResPartnerQuery
-     */
     public function getLivechatOperator()
     {
         return $this->hasOne(ResPartner::className(), ['id' => 'livechat_operator_id']);
     }
 
-    /**
-     * Gets query for [[Partner]].
-     *
-     * @return \yii\db\ActiveQuery|ResPartnerQuery
-     */
     public function getPartner()
     {
         return $this->hasOne(ResPartner::className(), ['id' => 'partner_id']);
     }
 
-    /**
-     * Gets query for [[WriteU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getWriteU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'write_uid']);
     }
 
-    /**
-     * {@inheritdoc}
-     * @return WebsiteVisitorQuery the active query used by this AR class.
-     */
     public static function find()
     {
         return new WebsiteVisitorQuery(get_called_class());

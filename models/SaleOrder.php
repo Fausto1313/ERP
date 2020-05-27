@@ -3,88 +3,13 @@
 namespace app\models;
 
 use Yii;
-
-/**
- * This is the model class for table "sale_order".
- *
- * @property int $id TRIAL
- * @property int|null $campaign_id TRIAL
- * @property int|null $source_id TRIAL
- * @property int|null $medium_id TRIAL
- * @property int|null $message_main_attachment_id TRIAL
- * @property string|null $access_token TRIAL
- * @property string $name TRIAL
- * @property string|null $origin TRIAL
- * @property string|null $client_order_ref TRIAL
- * @property string|null $reference TRIAL
- * @property string|null $state TRIAL
- * @property string $date_order TRIAL
- * @property string|null $validity_date TRIAL
- * @property int|null $require_signature TRIAL
- * @property int|null $require_payment TRIAL
- * @property string|null $create_date TRIAL
- * @property int|null $user_id TRIAL
- * @property int $partner_id TRIAL
- * @property int $partner_invoice_id TRIAL
- * @property int $partner_shipping_id TRIAL
- * @property int $pricelist_id TRIAL
- * @property int|null $analytic_account_id TRIAL
- * @property string|null $invoice_status TRIAL
- * @property string|null $note TRIAL
- * @property float|null $amount_untaxed TRIAL
- * @property float|null $amount_tax TRIAL
- * @property float|null $amount_total TRIAL
- * @property float|null $currency_rate TRIAL
- * @property int|null $payment_term_id TRIAL
- * @property int|null $fiscal_position_id TRIAL
- * @property int $company_id TRIAL
- * @property int|null $team_id TRIAL
- * @property string|null $signed_by TRIAL
- * @property string|null $signed_on TRIAL
- * @property string|null $commitment_date TRIAL
- * @property int|null $create_uid TRIAL
- * @property int|null $write_uid TRIAL
- * @property string|null $write_date TRIAL
- * @property int|null $sale_order_template_id TRIAL
- * @property int|null $incoterm TRIAL
- * @property string $picking_policy TRIAL
- * @property int $warehouse_id TRIAL
- * @property int|null $procurement_group_id TRIAL
- * @property string|null $effective_date TRIAL
- * @property int|null $opportunity_id TRIAL
- * @property int|null $cart_recovery_email_sent TRIAL
- * @property int|null $website_id TRIAL
- * @property string|null $warning_stock TRIAL
- * @property string|null $trial539 TRIAL
- *
- * @property UtmCampaign $campaign
- * @property ResCompany $company
- * @property ResUsers $createU
- * @property UtmMedium $medium
- * @property IrAttachment $messageMainAttachment
- * @property CrmLead $opportunity
- * @property ResPartner $partner
- * @property ResPartner $partnerInvoice
- * @property ResPartner $partnerShipping
- * @property UtmSource $source
- * @property CrmTeam $team
- * @property ResUsers $user
- * @property ResUsers $writeU
- * @property SaleOrderLine[] $saleOrderLines
- */
 class SaleOrder extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return 'sale_order';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -168,150 +93,71 @@ class SaleOrder extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * Gets query for [[Campaign]].
-     *
-     * @return \yii\db\ActiveQuery|UtmCampaignQuery
-     */
     public function getCampaign()
     {
         return $this->hasOne(UtmCampaign::className(), ['id' => 'campaign_id']);
     }
-
-    /**
-     * Gets query for [[Company]].
-     *
-     * @return \yii\db\ActiveQuery|ResCompanyQuery
-     */
     public function getCompany()
     {
         return $this->hasOne(ResCompany::className(), ['id' => 'company_id']);
     }
 
-    /**
-     * Gets query for [[CreateU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getCreateU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'create_uid']);
     }
 
-    /**
-     * Gets query for [[Medium]].
-     *
-     * @return \yii\db\ActiveQuery|UtmMediumQuery
-     */
     public function getMedium()
     {
         return $this->hasOne(UtmMedium::className(), ['id' => 'medium_id']);
     }
 
-    /**
-     * Gets query for [[MessageMainAttachment]].
-     *
-     * @return \yii\db\ActiveQuery|IrAttachmentQuery
-     */
     public function getMessageMainAttachment()
     {
         return $this->hasOne(IrAttachment::className(), ['id' => 'message_main_attachment_id']);
     }
 
-    /**
-     * Gets query for [[Opportunity]].
-     *
-     * @return \yii\db\ActiveQuery|CrmLeadQuery
-     */
     public function getOpportunity()
     {
         return $this->hasOne(CrmLead::className(), ['id' => 'opportunity_id']);
     }
 
-    /**
-     * Gets query for [[Partner]].
-     *
-     * @return \yii\db\ActiveQuery|ResPartnerQuery
-     */
     public function getPartner()
     {
         return $this->hasOne(ResPartner::className(), ['id' => 'partner_id']);
     }
 
-    /**
-     * Gets query for [[PartnerInvoice]].
-     *
-     * @return \yii\db\ActiveQuery|ResPartnerQuery
-     */
     public function getPartnerInvoice()
     {
         return $this->hasOne(ResPartner::className(), ['id' => 'partner_invoice_id']);
     }
 
-    /**
-     * Gets query for [[PartnerShipping]].
-     *
-     * @return \yii\db\ActiveQuery|ResPartnerQuery
-     */
     public function getPartnerShipping()
     {
         return $this->hasOne(ResPartner::className(), ['id' => 'partner_shipping_id']);
     }
 
-    /**
-     * Gets query for [[Source]].
-     *
-     * @return \yii\db\ActiveQuery|UtmSourceQuery
-     */
     public function getSource()
     {
         return $this->hasOne(UtmSource::className(), ['id' => 'source_id']);
     }
 
-    /**
-     * Gets query for [[Team]].
-     *
-     * @return \yii\db\ActiveQuery|CrmTeamQuery
-     */
     public function getTeam()
     {
         return $this->hasOne(CrmTeam::className(), ['id' => 'team_id']);
     }
-
-    /**
-     * Gets query for [[User]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getUser()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'user_id']);
     }
-
-    /**
-     * Gets query for [[WriteU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getWriteU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'write_uid']);
     }
-
-    /**
-     * Gets query for [[SaleOrderLines]].
-     *
-     * @return \yii\db\ActiveQuery|SaleOrderLineQuery
-     */
     public function getSaleOrderLines()
     {
         return $this->hasMany(SaleOrderLine::className(), ['order_id' => 'id']);
     }
-
-    /**
-     * {@inheritdoc}
-     * @return SaleOrderQuery the active query used by this AR class.
-     */
     public static function find()
     {
         return new SaleOrderQuery(get_called_class());

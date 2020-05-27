@@ -4,43 +4,13 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "product_product".
- *
- * @property int $id TRIAL
- * @property int|null $message_main_attachment_id TRIAL
- * @property string|null $default_code TRIAL
- * @property int|null $active TRIAL
- * @property int $product_tmpl_id TRIAL
- * @property string|null $barcode TRIAL
- * @property string|null $combination_indices TRIAL
- * @property float|null $volume TRIAL
- * @property float|null $weight TRIAL
- * @property int|null $can_image_variant_1024_be_zoomed TRIAL
- * @property int|null $create_uid TRIAL
- * @property string|null $create_date TRIAL
- * @property int|null $write_uid TRIAL
- * @property string|null $write_date TRIAL
- * @property string|null $trial375 TRIAL
- *
- * @property ResUsers $createU
- * @property IrAttachment $messageMainAttachment
- * @property ResUsers $writeU
- * @property SaleOrderLine[] $saleOrderLines
- */
 class ProductProduct extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return 'product_product';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -56,9 +26,6 @@ class ProductProduct extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function attributeLabels()
     {
         return [
@@ -80,50 +47,26 @@ class ProductProduct extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * Gets query for [[CreateU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getCreateU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'create_uid']);
     }
 
-    /**
-     * Gets query for [[MessageMainAttachment]].
-     *
-     * @return \yii\db\ActiveQuery|IrAttachmentQuery
-     */
     public function getMessageMainAttachment()
     {
         return $this->hasOne(IrAttachment::className(), ['id' => 'message_main_attachment_id']);
     }
 
-    /**
-     * Gets query for [[WriteU]].
-     *
-     * @return \yii\db\ActiveQuery|ResUsersQuery
-     */
     public function getWriteU()
     {
         return $this->hasOne(ResUsers::className(), ['id' => 'write_uid']);
     }
 
-    /**
-     * Gets query for [[SaleOrderLines]].
-     *
-     * @return \yii\db\ActiveQuery|SaleOrderLineQuery
-     */
     public function getSaleOrderLines()
     {
         return $this->hasMany(SaleOrderLine::className(), ['product_id' => 'id']);
     }
 
-    /**
-     * {@inheritdoc}
-     * @return ProductProductQuery the active query used by this AR class.
-     */
     public static function find()
     {
         return new ProductProductQuery(get_called_class());
