@@ -9,14 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * ResPartnerController implements the CRUD actions for ResPartner model.
- */
 class ResPartnerController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
@@ -29,10 +23,6 @@ class ResPartnerController extends Controller
         ];
     }
 
-    /**
-     * Lists all ResPartner models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $searchModel = new ResPartnerSearch();
@@ -44,12 +34,6 @@ class ResPartnerController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single ResPartner model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -57,11 +41,6 @@ class ResPartnerController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new ResPartner model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
     public function actionCreate()
     {
         $model = new ResPartner();
@@ -75,13 +54,6 @@ class ResPartnerController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing ResPartner model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -95,13 +67,6 @@ class ResPartnerController extends Controller
         ]);
     }
 
-    /**
-     * Deletes an existing ResPartner model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -109,13 +74,6 @@ class ResPartnerController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the ResPartner model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return ResPartner the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($id)
     {
         if (($model = ResPartner::findOne($id)) !== null) {
