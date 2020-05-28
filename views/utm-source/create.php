@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ResPartner */
+/* @var $model app\models\UtmSource */
 
-$this->title = 'Crear Res Partner';
-$this->params['breadcrumbs'][] = ['label' => 'Res Partners', 'url' => ['index']];
+$this->title = 'Create Utm Source';
+$this->params['breadcrumbs'][] = ['label' => 'Utm Sources', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="res-partner-create">
+<div class="utm-source-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
