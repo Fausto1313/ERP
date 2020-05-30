@@ -4,6 +4,10 @@ namespace app\models;
 
 class ResEmployedQuery extends \yii\db\ActiveQuery
 {
+    public function __call($name, $params) {
+        
+        parent::__call($name, $params);
+    }
     public function all($db = null)
     {
         return parent::all($db);

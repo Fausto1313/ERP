@@ -24,6 +24,7 @@ class ResEmployed extends \yii\db\ActiveRecord
             [['ID_Partner'], 'exist', 'skipOnError' => true, 'targetClass' => ResPartner::className(), 'targetAttribute' => ['ID_Partner' => 'id']],
         ];
     }
+    
 /*Por nomenclatura se utilizan terminos en ingles, guiones bajos
 para no mostrar tal cual el atributo este lo parseamos y cambiamos */
     public function attributeLabels()
