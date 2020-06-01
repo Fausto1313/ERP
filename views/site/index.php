@@ -2,50 +2,51 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'ERP - Risc';
 ?>
+
+
 <div class="site-index">
 
+    
+    
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Bienvenido al ERP de Risc</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+       
     </div>
 
     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h3>NUESTROS PRODUCTOS Y SERVICIOS</h3>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Inicio</p>
+                <p>Soporte de Chat en vivo</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+             
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h3>CONTACTESE CON NOSOTROS</h3>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Contáctenos</p>
+                <p>Lista de Correo</p>
+                <p>Empleos</p>
+                <p>Presentaciones</p>
+                <p><a class="btn btn-default" href="http://helpdesk.addar.mx/contacto_form/">Contacto de Soporte &raquo;</a></p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+             
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h3>REINTEGRACIÓN EN SERVICIOS DE CÓMPUTO, S.A. DE C.V. </h3><p> -Acerca de</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Somos un equipo de profesionales, nuestra meta es ayudar a mejorar los procesos, a través de las integraciones que ofrecemos, con productos disruptivos.
+                Construimos grandes productos para solucionar y optimizar, problemas de negocio, en la pequeña y mediana empresa. </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <p>Aviso de Privacidad</p>
+
+        
             </div>
         </div>
 
