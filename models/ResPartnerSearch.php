@@ -12,7 +12,7 @@ class ResPartnerSearch extends ResPartner
     {
         return [
             [['id', 'company_id', 'title', 'parent_id', 'user_id', 'active', 'employee', 'state_id', 'country_id', 'is_company', 'industry_id', 'color', 'partner_share', 'commercial_partner_id', 'create_uid', 'write_uid', 'message_main_attachment_id', 'message_bounce', 'partner_gid', 'website_id', 'is_published', 'team_id', 'supplier_rank', 'customer_rank', 'customer'], 'integer'],
-            [['name', 'create_date', 'display_name', 'date', 'ref', 'lang', 'tz', 'vat', 'website', 'comment', 'function', 'type', 'street', 'street2', 'zip', 'city', 'email', 'phone', 'mobile', 'commercial_company_name', 'company_name', 'write_date', 'email_normalized', 'signup_token', 'signup_type', 'signup_expiration', 'additional_info', 'phone_sanitized', 'calendar_last_notif_ack', 'picking_warn', 'picking_warn_msg', 'last_time_entries_checked', 'invoice_warn', 'invoice_warn_msg', 'sale_warn', 'sale_warn_msg', 'purchase_warn', 'purchase_warn_msg', 'website_meta_title', 'website_meta_description', 'website_meta_keywords', 'website_meta_og_img', 'website_description', 'website_short_description', 'trial496'], 'safe'],
+            [['name', 'create_date', 'date', 'ref', 'lang', 'tz', 'vat', 'website', 'comment', 'function', 'type', 'street', 'street2', 'zip', 'city', 'email', 'phone', 'mobile', 'commercial_company_name', 'company_name', 'write_date', 'email_normalized', 'signup_token', 'signup_type', 'signup_expiration', 'additional_info', 'phone_sanitized', 'calendar_last_notif_ack', 'picking_warn', 'picking_warn_msg', 'last_time_entries_checked', 'invoice_warn', 'invoice_warn_msg', 'sale_warn', 'sale_warn_msg', 'purchase_warn', 'purchase_warn_msg', 'website_meta_title', 'website_meta_description', 'website_meta_keywords', 'website_meta_og_img', 'website_description', 'website_short_description', 'trial496'], 'safe'],
             [['credit_limit', 'partner_latitude', 'partner_longitude', 'debit_limit'], 'number'],
         ];
     }
@@ -76,7 +76,6 @@ class ResPartnerSearch extends ResPartner
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'display_name', $this->display_name])
             ->andFilterWhere(['like', 'ref', $this->ref])
             ->andFilterWhere(['like', 'lang', $this->lang])
             ->andFilterWhere(['like', 'tz', $this->tz])

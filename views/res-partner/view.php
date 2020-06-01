@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name:ntext',
             'company_id',
             'create_date',
-            'display_name:ntext',
+           
             'date',
             'title',
             'parent_id',
