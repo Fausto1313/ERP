@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ResPartner */
 
-$this->title = 'Crear Res Partner';
-$this->params['breadcrumbs'][] = ['label' => 'Res Partners', 'url' => ['index']];
+$this->title = 'Crear Cliente';
+$this->params['breadcrumbs'][] = ['label' => 'Clientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-partner-create">

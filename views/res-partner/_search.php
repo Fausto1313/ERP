@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'create_date') ?>
 
-   
+    <?= $form->field($model, 'display_name') ?>
 
     <?php // echo $form->field($model, 'date') ?>
 
