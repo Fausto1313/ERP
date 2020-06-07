@@ -5,50 +5,81 @@
 $this->title = 'ERP - Risc';
 ?>
 
+<section>
+        <div class="container">
+            <div class="row">
+              
+                
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center">SERVICIOS</h2>
+                        <div class="col-sm-4">
+                            
+                            <div class="productinfo text-center">
+                                <img src="images/home/sign.jpg" alt="" />
+                                <h2>Consultoria</h2>
+                            </div>
 
-<div class="site-index">
+                            <div class="productinfo text-center">
+                                <img src="images/home/outsourcing.jpg" alt="" />
+                                <h2>Outsourcing de Recursos</h2>
+                            </div>
 
-    
-    
-    <div class="jumbotron">
-        <h1>Bienvenido al ERP de Risc</h1>
 
-       
-    </div>
 
-    <div class="body-content">
+                            <div class="productinfo text-center">
+                                <img src="images/home/business-intelligence.png" alt="" />
+                                <h2>Business Intelligence</h2>
+                            </div>                                     
+                           
+                        </div>   
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h3>NUESTROS PRODUCTOS Y SERVICIOS</h3>
+                        <div class="col-sm-4">
+                            
+                            <div class="productinfo text-center">
+                                <img src="images/home/soporte-tecnico.jpg" alt="" />
+                                <h2>Soporte</h2>
+                            </div>
 
-                <p>Inicio</p>
-                <p>Soporte de Chat en vivo</p>
+                            <div class="productinfo text-center">
+                                <img src="images/home/img113.jpg" alt="" />
+                                <h2>Cursos</h2>
+                            </div>
 
-             
-            </div>
-            <div class="col-lg-4">
-                <h3>CONTACTESE CON NOSOTROS</h3>
+                            <div class="productinfo text-center">
+                                <img src="images/home/2354.png" alt="" />
+                                <h2>Internet de las cosas</h2>
+                            </div>
+                            
+                        </div>
 
-                <p>Contáctenos</p>
-                <p>Lista de Correo</p>
-                <p>Empleos</p>
-                <p>Presentaciones</p>
-                <p><a class="btn btn-default" href="http://helpdesk.addar.mx/contacto_form/">Contacto de Soporte &raquo;</a></p>
+                        <div class="col-sm-4">
+                            
+                            <div class="productinfo text-center">
+                                <img src="images/home/mobile_device.jpg" alt="" />
+                                <h2>Desarrollo de Aplicaciones</h2>
+                            </div>
 
-             
-            </div>
-            <div class="col-lg-4">
-                <h3>REINTEGRACIÓN EN SERVICIOS DE CÓMPUTO, S.A. DE C.V. </h3><p> -Acerca de</p>
+                            <div class="productinfo text-center">
+                                <img src="images/home/2351.jpg" alt="" />
+                                <h2>Ventas</h2>
+                            </div>
 
-                <p>Somos un equipo de profesionales, nuestra meta es ayudar a mejorar los procesos, a través de las integraciones que ofrecemos, con productos disruptivos.
-                Construimos grandes productos para solucionar y optimizar, problemas de negocio, en la pequeña y mediana empresa. </p>
+                           
+                            
+                        </div>                                          
+                           
+                        </div>                     
+                        
+                    </div><!--features_items-->
 
-                <p>Aviso de Privacidad</p>
+                  
 
-        
+
+
+                    
+                    
+                </div>
             </div>
         </div>
-
-    </div>
-</div>
+    </section>
