@@ -13,12 +13,15 @@ class LoginForm extends Model
 
     private $_user = false;
 
+    public $login;
+    //public $password
+
 
     public function rules()
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['login', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -45,12 +48,22 @@ class LoginForm extends Model
         return false;
     }
 
-    public function getUser()
+    /*public function getUser()
     {
         if ($this->_user === false) {
             $this->_user = User::findByUsername($this->username);
         }
 
         return $this->_user;
+    }*/
+
+    public function getUser()
+    {
+        if ($this->_user === false) {
+            $this->_user = User::findByUsername($this->login);
+        }
+
+        return $this->_user;
     }
+
 }
