@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 
 <div class="res-users-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'active')->textInput() ?>
 

@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 
 
-$this->title = 'Create Res Users';
-$this->params['breadcrumbs'][] = ['label' => 'Res Users', 'url' => ['index']];
+$this->title = 'Crear Usuario';
+$this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-users-create">
