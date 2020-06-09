@@ -12,7 +12,7 @@ class ProductProductSearch extends ProductProduct
     {
         return [
             [['id', 'message_main_attachment_id', 'active', 'product_tmpl_id', 'can_image_variant_1024_be_zoomed', 'create_uid', 'write_uid'], 'integer'],
-            [['default_code', 'barcode', 'combination_indices', 'create_date', 'write_date', 'trial375'], 'safe'],
+            [['default_code', 'barcode', 'combination_indices', 'create_date', 'write_date'], 'safe'],
             [['volume', 'weight'], 'number'],
         ];
     }
@@ -54,7 +54,7 @@ class ProductProductSearch extends ProductProduct
         $query->andFilterWhere(['like', 'default_code', $this->default_code])
             ->andFilterWhere(['like', 'barcode', $this->barcode])
             ->andFilterWhere(['like', 'combination_indices', $this->combination_indices])
-            ->andFilterWhere(['like', 'trial375', $this->trial375]);
+            ;
 
         return $dataProvider;
     }

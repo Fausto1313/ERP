@@ -246,9 +246,6 @@ $SchedulerList3=ArrayHelper::map($Scheduler3,'id','name');
          <?= $form->field($model, 'warning_stock')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Nota']) ?> 
     </div>
 
-     <div class="form-group col-md-6">
-         <?= $form->field($model, 'trial539')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'partner_latitude']) ?> 
-    </div>-->
 </div>
 
     <div class="form-group">

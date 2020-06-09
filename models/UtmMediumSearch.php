@@ -11,7 +11,7 @@ class UtmMediumSearch extends UtmMedium
     {
         return [
             [['id', 'active', 'create_uid', 'write_uid'], 'integer'],
-            [['name', 'create_date', 'write_date', 'trial568'], 'safe'],
+            [['name', 'create_date', 'write_date'], 'safe'],
         ];
     }
 
@@ -46,7 +46,7 @@ class UtmMediumSearch extends UtmMedium
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'trial568', $this->trial568]);
+           ;
 
         return $dataProvider;
     }

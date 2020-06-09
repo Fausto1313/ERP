@@ -18,7 +18,6 @@ class CrmTeam extends \yii\db\ActiveRecord
             [['name', 'alias_id'], 'required'],
             [['name'], 'string'],
             [['create_date', 'write_date'], 'safe'],
-            [['trial304'], 'string', 'max' => 1],
             [['alias_id'], 'exist', 'skipOnError' => true, 'targetClass' => MailAlias::className(), 'targetAttribute' => ['alias_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
             [['create_uid'], 'exist', 'skipOnError' => true, 'targetClass' => ResUsers::className(), 'targetAttribute' => ['create_uid' => 'id']],
@@ -48,7 +47,7 @@ class CrmTeam extends \yii\db\ActiveRecord
             'alias_id' => 'Alias',
             'use_quotations' => 'Use Quotations',
             'invoiced_target' => 'Invoiced Target',
-            'trial304' => 'Trial304',
+        
         ];
     }
 

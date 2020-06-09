@@ -19,7 +19,7 @@ class CrmLead extends \yii\db\ActiveRecord
             [['name', 'type'], 'required'],
             [['date_action_last', 'date_closed', 'date_open', 'date_last_stage_update', 'date_conversion', 'date_deadline', 'create_date', 'write_date'], 'safe'],
             [['day_open', 'day_close', 'probability', 'automated_probability', 'planned_revenue', 'expected_revenue'], 'number'],
-            [['trial242'], 'string', 'max' => 1],
+   
             [['campaign_id'], 'exist', 'skipOnError' => true, 'targetClass' => UtmCampaign::className(), 'targetAttribute' => ['campaign_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
             [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCountry::className(), 'targetAttribute' => ['country_id' => 'id']],
@@ -96,7 +96,7 @@ class CrmLead extends \yii\db\ActiveRecord
             'create_date' => 'Fecha de Creacion',
             'write_uid' => 'Write Uid',
             'write_date' => 'Write Date',
-            'trial242' => 'Trial242',
+ 
         ];
     }
 

@@ -12,7 +12,7 @@ class UtmCampaignSearch extends UtmCampaign
     {
         return [
             [['id', 'user_id', 'stage_id', 'is_website', 'color', 'create_uid', 'write_uid', 'company_id'], 'integer'],
-            [['name', 'create_date', 'write_date', 'trial562'], 'safe'],
+            [['name', 'create_date', 'write_date'], 'safe'],
         ];
     }
 
@@ -50,7 +50,7 @@ class UtmCampaignSearch extends UtmCampaign
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'trial562', $this->trial562]);
+         ;
 
         return $dataProvider;
     }

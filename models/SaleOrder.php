@@ -18,7 +18,7 @@ class SaleOrder extends \yii\db\ActiveRecord
             [['name', 'date_order', 'partner_id', 'partner_invoice_id', 'partner_shipping_id', 'pricelist_id', 'company_id', 'picking_policy', 'warehouse_id'], 'required'],
             [['date_order', 'validity_date', 'create_date', 'signed_on', 'commitment_date', 'write_date', 'effective_date'], 'safe'],
             [['amount_untaxed', 'amount_tax', 'amount_total', 'currency_rate'], 'number'],
-            [['trial539'], 'string', 'max' => 1],
+         
             [['campaign_id'], 'exist', 'skipOnError' => true, 'targetClass' => UtmCampaign::className(), 'targetAttribute' => ['campaign_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
             [['create_uid'], 'exist', 'skipOnError' => true, 'targetClass' => ResUsers::className(), 'targetAttribute' => ['create_uid' => 'id']],
@@ -89,7 +89,7 @@ class SaleOrder extends \yii\db\ActiveRecord
             'cart_recovery_email_sent' => 'Cart Recovery Email Sent',
             'website_id' => 'Website ID',
             'warning_stock' => 'Warning Stock',
-            'trial539' => 'Trial539',
+            
         ];
     }
 

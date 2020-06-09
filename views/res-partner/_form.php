@@ -320,9 +320,7 @@ use yii\widgets\ActiveForm;
          <?= $form->field($model, 'customer')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'customer']) ?> 
     </div>
 
-    <div class="form-group col-md-6">
-         <?= $form->field($model, 'trial496')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'trial496']) ?> 
-    </div>-->
+   
 </div>
 
     <div class="form-group">

@@ -12,7 +12,7 @@ class SaleOrderLineSearch extends SaleOrderLine
     {
         return [
             [['id', 'order_id', 'sequence', 'product_id', 'product_uom', 'salesman_id', 'currency_id', 'company_id', 'order_partner_id', 'is_expense', 'is_downpayment', 'create_uid', 'write_uid', 'product_packaging', 'route_id', 'linked_line_id'], 'integer'],
-            [['name', 'invoice_status', 'qty_delivered_method', 'state', 'display_type', 'create_date', 'write_date', 'warning_stock', 'trial555'], 'safe'],
+            [['name', 'invoice_status', 'qty_delivered_method', 'state', 'display_type', 'create_date', 'write_date', 'warning_stock'], 'safe'],
             [['price_unit', 'price_subtotal', 'price_tax', 'price_total', 'price_reduce', 'price_reduce_taxinc', 'price_reduce_taxexcl', 'discount', 'product_uom_qty', 'qty_delivered', 'qty_delivered_manual', 'qty_to_invoice', 'qty_invoiced', 'untaxed_amount_invoiced', 'untaxed_amount_to_invoice', 'customer_lead'], 'number'],
         ];
     }
@@ -80,7 +80,7 @@ class SaleOrderLineSearch extends SaleOrderLine
             ->andFilterWhere(['like', 'state', $this->state])
             ->andFilterWhere(['like', 'display_type', $this->display_type])
             ->andFilterWhere(['like', 'warning_stock', $this->warning_stock])
-            ->andFilterWhere(['like', 'trial555', $this->trial555]);
+           ;
 
         return $dataProvider;
     }

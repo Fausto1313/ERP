@@ -17,7 +17,7 @@ class ResUsers extends \yii\db\ActiveRecord
             [['login', 'company_id', 'partner_id', 'notification_type', 'odoobot_state'], 'required'],
             [['login', 'password', 'signature', 'notification_type', 'out_of_office_message', 'odoobot_state', 'livechat_username'], 'string'],
             [['create_date', 'write_date'], 'safe'],
-            [['trial532'], 'string', 'max' => 1],
+  
             [['login`(255),`website_id'], 'unique'],
             [['alias_id'], 'exist', 'skipOnError' => true, 'targetClass' => MailAlias::className(), 'targetAttribute' => ['alias_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
@@ -57,7 +57,7 @@ class ResUsers extends \yii\db\ActiveRecord
             'rank_id' => 'Rank ID',
             'next_rank_id' => 'Next Rank ID',
             'livechat_username' => 'Livechat Username',
-            'trial532' => 'Trial532',
+           
         ];
     }
 

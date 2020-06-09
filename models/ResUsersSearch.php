@@ -12,7 +12,7 @@ class ResUsersSearch extends ResUsers
     {
         return [
             [['id', 'active', 'company_id', 'partner_id', 'action_id', 'share', 'create_uid', 'write_uid', 'alias_id', 'website_id', 'sale_team_id', 'target_sales_won', 'target_sales_done', 'target_sales_invoiced', 'karma', 'rank_id', 'next_rank_id'], 'integer'],
-            [['login', 'password', 'create_date', 'signature', 'write_date', 'notification_type', 'out_of_office_message', 'odoobot_state', 'livechat_username', 'trial532'], 'safe'],
+            [['login', 'password', 'create_date', 'signature', 'write_date', 'notification_type', 'out_of_office_message', 'odoobot_state', 'livechat_username'], 'safe'],
         ];
     }
 
@@ -65,8 +65,7 @@ class ResUsersSearch extends ResUsers
             ->andFilterWhere(['like', 'out_of_office_message', $this->out_of_office_message])
             ->andFilterWhere(['like', 'odoobot_state', $this->odoobot_state])
             ->andFilterWhere(['like', 'livechat_username', $this->livechat_username])
-            ->andFilterWhere(['like', 'trial532', $this->trial532]);
-
+          ;
         return $dataProvider;
     }
 }

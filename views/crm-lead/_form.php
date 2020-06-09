@@ -284,9 +284,6 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
           <?= $form->field($model, 'write_date')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Email del Cliente']) ?> 
     </div>
 
-     <div class="form-group col-md-6">
-          <?= $form->field($model, 'trial242')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Email del Cliente']) ?> 
-    </div>-->
 
   </div>
 

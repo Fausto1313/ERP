@@ -59,7 +59,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'livechat_username')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'trial532')->textInput(['maxlength' => true]) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

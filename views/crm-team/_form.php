@@ -111,9 +111,6 @@ $SchedulerList2=ArrayHelper::map($Scheduler2,'id','alias_name');
          <?= $form->field($model, 'invoiced_target')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'invoiced_target']) ?> 
     </div>
 
-    <div class="form-group col-md-6">
-         <?= $form->field($model, 'trial304')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'trial304']) ?> 
-    </div>-->
    
 </div>
     <div class="form-group">

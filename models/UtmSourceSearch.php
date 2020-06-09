@@ -11,7 +11,7 @@ class UtmSourceSearch extends UtmSource
     {
         return [
             [['id', 'create_uid', 'write_uid'], 'integer'],
-            [['name', 'create_date', 'write_date', 'trial581'], 'safe'],
+            [['name', 'create_date', 'write_date'], 'safe'],
         ];
     }
 
@@ -44,7 +44,7 @@ class UtmSourceSearch extends UtmSource
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'trial581', $this->trial581]);
+            ;
 
         return $dataProvider;
     }
