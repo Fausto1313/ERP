@@ -52,7 +52,7 @@ para no mostrar tal cual el atributo este lo parseamos y cambiamos */
     /*En este apartado hago referencia a la llave primaria de employed y a la foranea rescompany*/
     public function getCompani()
     {
-        return $this->hasOne(ResCompany::className(), ['partner_id' => 'Id_comp']);
+        return $this->hasOne(ResCompany::className(), ['id' => 'Id_comp']);
     }
 
 }
