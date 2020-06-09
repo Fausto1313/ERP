@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 
 
-$this->title = 'Create Res Company';
-$this->params['breadcrumbs'][] = ['label' => 'Res Companies', 'url' => ['index']];
+$this->title = 'Crear Compañia';
+$this->params['breadcrumbs'][] = ['label' => 'Compañia', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-company-create">

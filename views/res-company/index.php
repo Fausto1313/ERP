@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ResCompanySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Res Companies';
+$this->title = 'Compañias';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-company-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Res Company', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Compañia', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
