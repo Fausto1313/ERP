@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 
 
-$this->title = 'Create Res Country';
-$this->params['breadcrumbs'][] = ['label' => 'Res Countries', 'url' => ['index']];
+$this->title = 'Crear Pais';
+$this->params['breadcrumbs'][] = ['label' => 'Paises', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-country-create">

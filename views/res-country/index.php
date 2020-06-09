@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 
-$this->title = 'Res Countries';
+$this->title = 'Paises';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-country-index">
@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Res Country', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Pais', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
