@@ -3,13 +3,15 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+/* @var $this yii\web\View */
+/* @var $model app\models\ResPartner */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Equipos de Ventas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Departamentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="crm-team-view">
+<div class="res-employed-department-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,23 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            //'message_main_attachment_id',
-            'name',
-           // 'sequence',
+            'name:ntext',
+            'complete_name',
             'active',
-            'company_name',
-            //'user_id',
-            //'color',
-            'create_uid',
+            'company_id',
+            //'parent_id',
+            //'manager_id',
+            'note',
             'create_date',
-            //'write_uid',
-            //'write_date',
-            //'use_leads',
-           // 'use_opportunities',
-            'alias_id',
-            //'use_quotations',
-            //'invoiced_target',
-            //'trial304',
+            
         ],
     ]) ?>
 

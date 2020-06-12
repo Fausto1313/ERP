@@ -28,7 +28,7 @@ al registrar el nuevo empleado guardara el id */
 $Scheduler= ResCompany::find()
 ->all();
 
-$SchedulerList=ArrayHelper::map($Scheduler,'id','name');
+$SchedulerList=ArrayHelper::map($Scheduler,'name','name');
 
 $Scheduler1= ResUsers::find()
 ->all();
@@ -43,7 +43,7 @@ $SchedulerList2=ArrayHelper::map($Scheduler2,'id','alias_name');
 ?>
 
 </div>
-</div>
+
 
     <!-- <div class="form-group col-md-6">
           <?= $form->field($model, 'message_main_attachment_id')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'message_main_attachment_id Cliente']) ?> 
@@ -56,14 +56,14 @@ $SchedulerList2=ArrayHelper::map($Scheduler2,'id','alias_name');
 
    <!-- <div class="form-group col-md-6">
          <?= $form->field($model, 'sequence')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'sequence']) ?> 
-    </div>
-
-    <div class="form-group col-md-6">
-         <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Estatus']) ?> 
     </div>-->
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'company_id')->dropDownList($SchedulerList,['prompt'=>'Seleccione una compañia','style'=>'width:400px']); ?> 
+         <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Activo/Inactivo']) ?> 
+    </div>
+
+    <div class="form-group col-md-6">
+         <?= $form->field($model, 'company_name')->dropDownList($SchedulerList,['prompt'=>'Seleccione una compañia','style'=>'width:400px']); ?> 
     </div>
 
     <!--<div class="form-group col-md-6">
@@ -111,6 +111,9 @@ $SchedulerList2=ArrayHelper::map($Scheduler2,'id','alias_name');
          <?= $form->field($model, 'invoiced_target')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'invoiced_target']) ?> 
     </div>
 
+    <div class="form-group col-md-6">
+         <?= $form->field($model, 'trial304')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'trial304']) ?> 
+    </div>-->
    
 </div>
     <div class="form-group">

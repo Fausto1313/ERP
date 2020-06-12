@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name:ntext',
-            'company_id',
+            'company_name',
             'create_date',
             //'display_name:ntext',
             //'date',
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'website:ntext',
             //'comment:ntext',
             //'credit_limit',
-            //'active', Estatus pendiente
+            'active', 
             //'employee',
             //'function:ntext',
             'type:ntext',
@@ -55,6 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'city:ntext',
             //'state_id',
             //'country_id',
+            'country_name',
             //'partner_latitude',
             //'partner_longitude',
             'email:ntext',

@@ -2,13 +2,15 @@
 
 use yii\helpers\Html;
 
+/* @var $this yii\web\View */
+/* @var $model app\models\ResPartner */
 
-$this->title = 'Update Presupuesto: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Sale Orders', 'url' => ['index']];
+$this->title = 'Update Departamento: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Departamento', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="sale-order-update">
+<div class="res-employed-department-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

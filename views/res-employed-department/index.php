@@ -9,15 +9,15 @@ use yii\widgets\ActiveForm;
 /* @var $searchModel app\models\ResPartnerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Clientes';
+$this->title = 'Departamentos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="res-partner-index">
+<div class="res-employed-department-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Crear Cliente', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Departamento', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,10 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name:ntext',
-            'company_name',            
-            'email',
+            'complete_name',            
+            'company_id',
             'create_date',
             //'date',
             //'title',

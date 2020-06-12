@@ -17,8 +17,9 @@ class ResEmployed extends \yii\db\ActiveRecord
     {
         return [
             [['Id_Comp'], 'required'],
-            [['Id_Comp', 'E_Nomina', 'ID_Partner'], 'integer'],
-            [['F_Creacion'], 'safe'],
+            [['E_Nomina', 'ID_Partner', 'codigo_postal'], 'integer'],
+            [['F_Creacion', 'birthday'], 'safe'],
+            [['Id_Comp', 'active', 'gender', 'marital', 'street', 'department_id', 'ciudad', 'country_id','work_phone', 'mobile_phone', 'work_email', 'work_location'], 'string'],
             [['N_Empleado'], 'string', 'max' => 30],
             [['E_Apellidos'], 'string', 'max' => 100],
             [['ID_Partner'], 'exist', 'skipOnError' => true, 'targetClass' => ResPartner::className(), 'targetAttribute' => ['ID_Partner' => 'id']],
@@ -37,6 +38,19 @@ para no mostrar tal cual el atributo este lo parseamos y cambiamos */
             'E_Nomina' => 'Numero de Nomina',
             'F_Creacion' => 'Fecha de Creacion',
             'ID_Partner' => 'Cliente',
+            'active' => 'Estatus',
+            'gender' => 'Genero',
+            'marital' => 'Estado civil',
+            'birthday' => 'Cumpleaños',
+            'department_id' => 'Departamento',
+            'street' => 'Calle',
+            'codigo_postal' => 'Codigo Postal',
+            'ciudad' => 'Ciudad',
+            'country_id' => 'Pais',
+            'work_phone' => 'Telefono de Oficina',
+            'mobile_phone' => 'Telefono personal',
+            'work_email' => 'Email de oficina',
+            'work_location' => 'Lugar de trabajo',
         ];
     }
 /**En este apartado tenemos las relaciones entre tablas Id corresponde a la tabla Res_Partner y ID_Partner corresponde a res_employed**/
@@ -52,7 +66,18 @@ para no mostrar tal cual el atributo este lo parseamos y cambiamos */
     /*En este apartado hago referencia a la llave primaria de employed y a la foranea rescompany*/
     public function getCompani()
     {
-        return $this->hasOne(ResCompany::className(), ['id' => 'Id_comp']);
+        return $this->hasOne(ResCompany::className(), ['name' => 'Id_comp']);
+    }
+
+    public function getDepartment()
+    {
+        return $this->hasOne(ResEmployedDepartment::className(), ['name' => 'department_id']);
+    }
+
+
+    public function getCountry()
+    {
+        return $this->hasOne(ResCountry::className(), ['name' => 'country_id']);
     }
 
 }

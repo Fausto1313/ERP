@@ -14,11 +14,11 @@ class ResPartner extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'display_name', 'ref', 'lang', 'tz', 'vat', 'website', 'comment', 'function', 'type', 'street', 'street2', 'zip', 'city', 'email', 'phone', 'mobile', 'commercial_company_name', 'company_name', 'email_normalized', 'signup_token', 'signup_type', 'additional_info', 'phone_sanitized', 'picking_warn', 'picking_warn_msg', 'invoice_warn', 'invoice_warn_msg', 'sale_warn', 'sale_warn_msg', 'purchase_warn', 'purchase_warn_msg', 'website_meta_title', 'website_meta_description', 'website_meta_keywords', 'website_meta_og_img', 'website_description', 'website_short_description'], 'string'],
-            [['company_id', 'title', 'parent_id', 'user_id', 'active', 'employee', 'state_id', 'country_id', 'is_company', 'industry_id', 'color', 'partner_share', 'commercial_partner_id', 'create_uid', 'write_uid', 'message_main_attachment_id', 'message_bounce', 'partner_gid', 'website_id', 'is_published', 'team_id', 'supplier_rank', 'customer_rank', 'customer'], 'integer'],
+            [['name', 'company_name', 'display_name', 'ref', 'lang', 'tz', 'vat', 'website', 'comment', 'function', 'type', 'street', 'street2', 'zip', 'city', 'email', 'phone', 'mobile', 'commercial_company_name', 'company_name', 'email_normalized', 'signup_token', 'signup_type', 'additional_info', 'phone_sanitized', 'picking_warn', 'picking_warn_msg', 'invoice_warn', 'invoice_warn_msg', 'sale_warn', 'sale_warn_msg', 'purchase_warn', 'purchase_warn_msg', 'website_meta_title', 'website_meta_description', 'website_meta_keywords', 'website_meta_og_img', 'website_description', 'website_short_description', 'country_name', 'active'], 'string'],
+            [['company_id', 'title', 'parent_id', 'user_id', 'employee', 'state_id', 'country_id', 'is_company', 'industry_id', 'color', 'partner_share', 'commercial_partner_id', 'create_uid', 'write_uid', 'message_main_attachment_id', 'message_bounce', 'partner_gid', 'website_id', 'is_published', 'team_id', 'supplier_rank', 'customer_rank', 'customer'], 'integer'],
             [['create_date', 'date', 'write_date', 'signup_expiration', 'calendar_last_notif_ack', 'last_time_entries_checked'], 'safe'],
             [['credit_limit', 'partner_latitude', 'partner_longitude', 'debit_limit'], 'number'],
-
+            [['trial496'], 'string', 'max' => 1],
             [['commercial_partner_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResPartner::className(), 'targetAttribute' => ['commercial_partner_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
             [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCountry::className(), 'targetAttribute' => ['country_id' => 'id']],
@@ -62,18 +62,19 @@ class ResPartner extends \yii\db\ActiveRecord
             'city' => 'Ciudad',
             'state_id' => 'State ID',
             'country_id' => 'Pais',
+            'country_name' => 'Pais',
             'partner_latitude' => 'Partner Latitude',
             'partner_longitude' => 'Partner Longitude',
             'email' => 'Email',
             'phone' => 'Telefono',
             'mobile' => 'Celular',
-            'is_company' => 'Es comapñia',
+            'is_company' => 'Es compañia',
             'industry_id' => 'Industry ID',
             'color' => 'Color',
             'partner_share' => 'Partner Share',
             'commercial_partner_id' => 'Commercial Partner ID',
             'commercial_company_name' => 'Commercial Company Name',
-            'company_name' => 'Company Name',
+            'company_name' => 'Compañia',
             'create_uid' => 'Id Usuario',
             'write_uid' => 'Write Uid',
             'write_date' => 'Write Date',
@@ -109,7 +110,7 @@ class ResPartner extends \yii\db\ActiveRecord
             'website_description' => 'Website Description',
             'website_short_description' => 'Website Short Description',
             'customer' => 'Customer',
-    
+            'trial496' => 'Trial496',
         ];
     }
     public function getCrmLeads()
@@ -143,12 +144,12 @@ class ResPartner extends \yii\db\ActiveRecord
 
     public function getCompany()
     {
-        return $this->hasOne(ResCompany::className(), ['id' => 'company_id']);
+        return $this->hasOne(ResCompany::className(), ['id' => 'company_name']);
     }
 
     public function getCountry()
     {
-        return $this->hasOne(ResCountry::className(), ['id' => 'country_id']);
+        return $this->hasOne(ResCountry::className(), ['id' => 'country_name']);
     }
 
    

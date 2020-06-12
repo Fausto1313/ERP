@@ -252,10 +252,17 @@ AppAsset::register($this);
                         ]
                         
                     ],
+
                     [
-                        'label' => 'Empleados',
-                        'icon' => 'book',
+                        'label' => 'Módulo Empleados',
+                        'icon' => 'user',
                         'url' => 'http://localhost:8080/index.php?r=res-employed%2Findex',
+                        'items' => [
+                            ['label' => 'Empleados', 'icon'=>'user', 'url'=>'http://localhost:8080/index.php?r=res-employed%2Findex'],
+                            ['label' => 'Departamentos', 'icon'=>'book', 'url'=>'http://localhost:8080/index.php?r=res-employed-department%2Findex'],
+                            
+                        ]
+                        
                     ],
 
                     [
@@ -268,18 +275,18 @@ AppAsset::register($this);
                         ]
                         
                     ],
-               
-                
-                    [
-                        'label' => 'Usuarios',
-                        'icon' => 'user',
-                        'url' =>'http://localhost:8080/index.php?r=res-users%2Findex',
-                    ],
+              
                     
                     [
                         'label' => 'Compañias',
                         'icon' => 'briefcase',
                         'url' =>'http://localhost:8080/index.php?r=res-company%2Findex',
+                    ],
+
+                    [
+                        'label' => 'Usuarios',
+                        'icon' => 'user',
+                        'url' =>'http://localhost:8080/index.php?r=res-users%2Findex',
                     ],
 
                    /* [

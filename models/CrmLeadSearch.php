@@ -11,8 +11,8 @@ class CrmLeadSearch extends CrmLead
     public function rules()
     {
         return [
-            [['id','email_cc', 'email_normalized', 'name', 'email_from', 'website', 'description', 'contact_name', 'partner_name', 'type', 'priority', 'referred', 'phone_state', 'email_state', 'street', 'street2', 'zip', 'city', 'phone', 'mobile', 'function'], 'string'],
-            [['message_main_attachment_id', 'message_bounce', 'campaign_id', 'source_id', 'medium_id', 'partner_id', 'active', 'team_id', 'stage_id', 'user_id', 'color', 'state_id', 'country_id', 'lang_id', 'title', 'company_id', 'lost_reason', 'create_uid', 'write_uid'], 'integer'],
+            [['id','email_cc', 'email_normalized', 'name', 'email_from', 'website', 'description', 'contact_name', 'partner_name', 'type', 'priority', 'referred', 'phone_state', 'email_state', 'street', 'street2', 'zip', 'city', 'phone', 'mobile', 'function', 'active', 'country_name', 'team_name', 'company_name'], 'string'],
+            [['message_main_attachment_id', 'message_bounce', 'campaign_id', 'source_id', 'medium_id', 'partner_id', 'team_id', 'stage_id', 'user_id', 'color', 'state_id', 'country_id', 'lang_id', 'title', 'company_id', 'lost_reason', 'create_uid', 'write_uid'], 'integer'],
             [['email_cc'], 'required'],
             [['date_action_last', 'date_closed', 'date_open', 'date_last_stage_update', 'date_conversion', 'date_deadline', 'create_date', 'write_date'], 'safe'],
             [['day_open', 'day_close', 'probability', 'automated_probability', 'planned_revenue', 'expected_revenue'], 'number'],
@@ -58,6 +58,7 @@ class CrmLeadSearch extends CrmLead
             'email_from' =>$this->email_from,
             'website' =>$this->website,
             'team_id' =>$this->team_id,
+            'team_name' =>$this->team_name,
             'description' => $this->description,
             'contact_name' =>$this->contact_name,
             'partner_name' => $this->partner_name,
@@ -86,12 +87,14 @@ class CrmLeadSearch extends CrmLead
             'city' => $this->city,
             'state_id' => $this->state_id,
             'country_id' =>$this->country_id,
+            'country_name' =>$this->country_name,
             'lang_id' =>$this->lang_id,
             'phone' => $this->phone,
             'mobile' => $this->mobile,
             'function' =>$this->function,
             'title' => $this->title,
             'company_id' => $this->company_id,
+            'company_name' => $this->company_name,
             'lost_reason' => $this->lost_Reason,
             'create_uid' =>$this->create_uid,
             'create_date' => $this->create_date,

@@ -8,8 +8,8 @@ use yii\widgets\ActiveForm;
 <div class="res-partner-form">
 
     <?php $form = ActiveForm::begin([ 'enableClientValidation' => true,
-    'options'                => [
-       'id'      => 'dynamic-form'
+    'options' => [
+       'id' => 'dynamic-form'
         ]]
     ); ?>
 
@@ -26,29 +26,22 @@ use yii\widgets\ActiveForm;
     al registrar el nuevo empleado guardara el id */
     $Scheduler= ResCompany::find()
     ->all();
+    $SchedulerList=ArrayHelper::map($Scheduler,'name','name');
 
     $Scheduler1= ResCountry::find()
     ->all();
-
-     
-    $SchedulerList=ArrayHelper::map($Scheduler,'id','name');
-    $SchedulerList1=ArrayHelper::map($Scheduler1,'id','name');
+    $SchedulerList1=ArrayHelper::map($Scheduler1,'name','name');
     
      
 
-    echo $form->field($model, 'company_id')->dropDownList($SchedulerList,['prompt'=>'Seleccione una compañia','style'=>'width:400px']);
+    echo $form->field($model, 'company_name')->dropDownList($SchedulerList,['prompt'=>'Seleccione una compañia', 'style'=>'width:400px']);
      
     ?>
 
 </div>
      <div class="form-group col-md-6">
           <?= $form->field($model, 'name')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Nombre del Cliente']) ?> 
-    </div>
-
-   <!-- <div class="form-group col-md-6">
-          <?= $form->field($model, 'company_id')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Id Compañia']) ?> 
-    </div>-->
-       
+    </div>       
 
    <div class="form-group col-md-6">
 
@@ -98,11 +91,11 @@ use yii\widgets\ActiveForm;
 
     <!--<div class="form-group col-md-6">
          <?= $form->field($model, 'comment')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'comment']) ?> 
-    </div>
+    </div>-->
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Estatus']) ?> 
-    </div>-->
+         <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Activo/Inactivo']) ?> 
+    </div>
 
     <!--<div class="form-group col-md-6">
          <?= $form->field($model, 'employee')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Empleado']) ?> 
@@ -133,7 +126,7 @@ use yii\widgets\ActiveForm;
     </div>
      
     <div class="form-group col-md-6">
-         <?=  $form->field($model, 'country_id')->dropDownList($SchedulerList1,['prompt'=>'Seleccione un pais','style'=>'width:400px']); ?> 
+         <?=  $form->field($model, 'country_name')->dropDownList($SchedulerList1,['prompt'=>'Seleccione un pais','style'=>'width:400px']); ?> 
     </div>
 
      <!--<div class="form-group col-md-6">
@@ -320,7 +313,9 @@ use yii\widgets\ActiveForm;
          <?= $form->field($model, 'customer')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'customer']) ?> 
     </div>
 
-   
+    <div class="form-group col-md-6">
+         <?= $form->field($model, 'trial496')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'trial496']) ?> 
+    </div>-->
 </div>
 
     <div class="form-group">

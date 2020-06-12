@@ -12,7 +12,7 @@ class ResCountrySearch extends ResCountry
     {
         return [
             [['id', 'address_view_id', 'currency_id', 'phone_code', 'create_uid', 'write_uid'], 'integer'],
-            [['name', 'code', 'address_format', 'name_position', 'vat_label', 'create_date', 'write_date',], 'safe'],
+            [['name', 'code', 'address_format', 'name_position', 'vat_label', 'create_date', 'write_date', 'trial434'], 'safe'],
         ];
     }
 
@@ -52,7 +52,7 @@ class ResCountrySearch extends ResCountry
             ->andFilterWhere(['like', 'address_format', $this->address_format])
             ->andFilterWhere(['like', 'name_position', $this->name_position])
             ->andFilterWhere(['like', 'vat_label', $this->vat_label])
-      ;
+            ->andFilterWhere(['like', 'trial434', $this->trial434]);
 
         return $dataProvider;
     }

@@ -11,7 +11,7 @@ class SaleOrderSearch extends SaleOrder
     {
         return [
             [['id', 'campaign_id', 'source_id', 'medium_id', 'message_main_attachment_id', 'require_signature', 'require_payment', 'user_id', 'partner_id', 'partner_invoice_id', 'partner_shipping_id', 'pricelist_id', 'analytic_account_id', 'payment_term_id', 'fiscal_position_id', 'company_id', 'team_id', 'create_uid', 'write_uid', 'sale_order_template_id', 'incoterm', 'warehouse_id', 'procurement_group_id', 'opportunity_id', 'cart_recovery_email_sent', 'website_id'], 'integer'],
-            [['access_token', 'name', 'origin', 'client_order_ref', 'reference', 'state', 'date_order', 'validity_date', 'create_date', 'invoice_status', 'note', 'signed_by', 'signed_on', 'commitment_date', 'write_date', 'picking_policy', 'effective_date', 'warning_stock'], 'safe'],
+            [['access_token', 'name', 'origin', 'client_order_ref', 'reference', 'state', 'date_order', 'validity_date', 'create_date', 'invoice_status', 'note', 'signed_by', 'signed_on', 'commitment_date', 'write_date', 'picking_policy', 'effective_date', 'warning_stock', 'trial539', 'partner_name', 'partner_invoice_name', 'partner_shipping_name', 'company_name', 'team_name'], 'safe'],
             [['amount_untaxed', 'amount_tax', 'amount_total', 'currency_rate'], 'number'],
         ];
     }
@@ -49,8 +49,11 @@ class SaleOrderSearch extends SaleOrder
             'create_date' => $this->create_date,
             'user_id' => $this->user_id,
             'partner_id' => $this->partner_id,
+            'partner_name' => $this->partner_name,
             'partner_invoice_id' => $this->partner_invoice_id,
+            'partner_invoice_name' => $this->partner_invoice_name,
             'partner_shipping_id' => $this->partner_shipping_id,
+            'partner_shipping_name' => $this->partner_shipping_name,
             'pricelist_id' => $this->pricelist_id,
             'analytic_account_id' => $this->analytic_account_id,
             'amount_untaxed' => $this->amount_untaxed,
@@ -60,7 +63,9 @@ class SaleOrderSearch extends SaleOrder
             'payment_term_id' => $this->payment_term_id,
             'fiscal_position_id' => $this->fiscal_position_id,
             'company_id' => $this->company_id,
+            'company_name' => $this->company_name,
             'team_id' => $this->team_id,
+            'team_name' => $this->team_name,
             'signed_on' => $this->signed_on,
             'commitment_date' => $this->commitment_date,
             'create_uid' => $this->create_uid,
@@ -87,7 +92,7 @@ class SaleOrderSearch extends SaleOrder
             ->andFilterWhere(['like', 'signed_by', $this->signed_by])
             ->andFilterWhere(['like', 'picking_policy', $this->picking_policy])
             ->andFilterWhere(['like', 'warning_stock', $this->warning_stock])
-          ;
+            ->andFilterWhere(['like', 'trial539', $this->trial539]);
 
         return $dataProvider;
     }

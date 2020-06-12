@@ -14,10 +14,11 @@ class CrmTeam extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['message_main_attachment_id', 'sequence', 'active', 'company_id', 'user_id', 'color', 'create_uid', 'write_uid', 'use_leads', 'use_opportunities', 'alias_id', 'use_quotations', 'invoiced_target'], 'integer'],
+            [['message_main_attachment_id', 'sequence', 'company_id', 'user_id', 'color', 'create_uid', 'write_uid', 'use_leads', 'use_opportunities', 'alias_id', 'use_quotations', 'invoiced_target'], 'integer'],
             [['name', 'alias_id'], 'required'],
-            [['name'], 'string'],
+            [['name', 'company_name', 'active'], 'string'],
             [['create_date', 'write_date'], 'safe'],
+            [['trial304'], 'string', 'max' => 1],
             [['alias_id'], 'exist', 'skipOnError' => true, 'targetClass' => MailAlias::className(), 'targetAttribute' => ['alias_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
             [['create_uid'], 'exist', 'skipOnError' => true, 'targetClass' => ResUsers::className(), 'targetAttribute' => ['create_uid' => 'id']],
@@ -36,6 +37,7 @@ class CrmTeam extends \yii\db\ActiveRecord
             'sequence' => 'Sequence',
             'active' => 'Estatus',
             'company_id' => 'Id Compañia',
+            'company_name' => 'Compañia',
             'user_id' => 'Usuario',
             'color' => 'Color',
             'create_uid' => 'Email de usuario asignado',
@@ -47,7 +49,7 @@ class CrmTeam extends \yii\db\ActiveRecord
             'alias_id' => 'Alias',
             'use_quotations' => 'Use Quotations',
             'invoiced_target' => 'Invoiced Target',
-        
+            'trial304' => 'Trial304',
         ];
     }
 
@@ -80,7 +82,7 @@ class CrmTeam extends \yii\db\ActiveRecord
     
     public function getCompany()
     {
-        return $this->hasOne(ResCompany::className(), ['id' => 'company_id']);
+        return $this->hasOne(ResCompany::className(), ['name' => 'company_name']);
     }
 
     public function getCreateU()

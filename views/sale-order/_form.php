@@ -36,22 +36,22 @@ $SchedulerList=ArrayHelper::map($Scheduler,'id','login');
 $Scheduler1= ResPartner::find()
 ->all();
  
-$SchedulerList1=ArrayHelper::map($Scheduler1,'id','name');
+$SchedulerList1=ArrayHelper::map($Scheduler1,'name','name');
 
 $Scheduler2= ResCompany::find()
 ->all();
  
-$SchedulerList2=ArrayHelper::map($Scheduler2,'id','name');
+$SchedulerList2=ArrayHelper::map($Scheduler2,'name','name');
 
 $Scheduler3= CrmTeam::find()
 ->all();
  
-$SchedulerList3=ArrayHelper::map($Scheduler3,'id','name');
+$SchedulerList3=ArrayHelper::map($Scheduler3,'name','name');
  
 ?>
 
 </div>
-</div>
+
 
     <!--<div class="form-group col-md-6">
           <?= $form->field($model, 'campaign_id')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Nombre del Cliente']) ?> 
@@ -120,15 +120,15 @@ $SchedulerList3=ArrayHelper::map($Scheduler3,'id','name');
     </div>
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'partner_id')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el cliente','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'partner_name')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el cliente','style'=>'width:400px']);?> 
     </div>
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'partner_invoice_id')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el socio de factura','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'partner_invoice_name')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el socio de factura','style'=>'width:400px']);?> 
     </div>
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'partner_shipping_id')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el socio de envio','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'partner_shipping_name')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el socio de envio','style'=>'width:400px']);?> 
     </div> 
 
     <div class="form-group col-md-6">
@@ -174,11 +174,11 @@ $SchedulerList3=ArrayHelper::map($Scheduler3,'id','name');
   
 
       <div class="form-group col-md-6">
-         <?= $form->field($model, 'company_id')->dropDownList($SchedulerList2,['prompt'=>'Seleccione la compañia','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'company_name')->dropDownList($SchedulerList2,['prompt'=>'Seleccione la compañia','style'=>'width:400px']);?> 
     </div>
 
    <div class="form-group col-md-6">
-         <?= $form->field($model, 'team_id')->dropDownList($SchedulerList3,['prompt'=>'Seleccione el equipo de ventas','style'=>'width:400px']); ?> </div>
+         <?= $form->field($model, 'team_name')->dropDownList($SchedulerList3,['prompt'=>'Seleccione el equipo de ventas','style'=>'width:400px']); ?> </div>
 
     <!--<div class="form-group col-md-6">
          <?= $form->field($model, 'signed_by')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Calle']) ?> 
@@ -246,6 +246,9 @@ $SchedulerList3=ArrayHelper::map($Scheduler3,'id','name');
          <?= $form->field($model, 'warning_stock')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Nota']) ?> 
     </div>
 
+     <div class="form-group col-md-6">
+         <?= $form->field($model, 'trial539')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'partner_latitude']) ?> 
+    </div>-->
 </div>
 
     <div class="form-group">

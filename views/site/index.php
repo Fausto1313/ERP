@@ -7,8 +7,7 @@ $this->title = 'ERP - Risc';
 
 <section>
         <div class="container">
-            <div class="row">
-              
+            <div class="row">             
                 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
@@ -71,14 +70,7 @@ $this->title = 'ERP - Risc';
                            
                         </div>                     
                         
-                    </div><!--features_items-->
-
-                  
-
-
-
-                    
-                    
+                    </div><!--features_items-->               
                 </div>
             </div>
         </div>

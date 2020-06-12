@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 $this->title = 'Crear Empleado';
-$this->params['breadcrumbs'][] = ['label' => 'Res Employeds', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Empleados', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="res-employed-create">

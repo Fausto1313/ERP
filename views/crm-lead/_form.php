@@ -33,12 +33,12 @@ al registrar el nuevo empleado guardara el id */
 $Scheduler= ResPartner::find()
 ->all();
 
-$SchedulerList=ArrayHelper::map($Scheduler,'id','name');
+$SchedulerList=ArrayHelper::map($Scheduler,'name','name');
 
 $Scheduler1= CrmTeam::find()
 ->all();
 
-$SchedulerList1=ArrayHelper::map($Scheduler1,'id','name');
+$SchedulerList1=ArrayHelper::map($Scheduler1,'name','name');
  
 $Scheduler2= ResUsers::find()
 ->all();
@@ -48,17 +48,17 @@ $SchedulerList2=ArrayHelper::map($Scheduler2,'id','login');
 $Scheduler3= ResCountry::find()
 ->all();
 
-$SchedulerList3=ArrayHelper::map($Scheduler3,'id','name');
+$SchedulerList3=ArrayHelper::map($Scheduler3,'name','name');
 
 $Scheduler4= ResCompany::find()
 ->all();
 
-$SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
+$SchedulerList4=ArrayHelper::map($Scheduler4,'name','name');
 
 ?>
 
 </div>
-</div>
+
 
     <!-- <div class="form-group col-md-6">
           <?= $form->field($model, 'email_cc')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Email del Cliente']) ?> 
@@ -99,7 +99,7 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
        
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'partner_id')->dropDownList($SchedulerList,['prompt'=>'Seleccione el cliente','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'partner_name')->dropDownList($SchedulerList,['prompt'=>'Seleccione el cliente','style'=>'width:400px']);?> 
     </div>
 
     <div class="form-group col-md-6">
@@ -119,11 +119,11 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
     </div>-->
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'company_id')->dropDownList($SchedulerList4,['prompt'=>'Seleecione la compañia','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'company_name')->dropDownList($SchedulerList4,['prompt'=>'Seleecione la compañia','style'=>'width:400px']);?> 
     </div>
 
-    <!--<div class="form-group col-md-6">
-         <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Estatus']) ?> 
+    <div class="form-group col-md-6">
+         <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Activo/Inactivo']) ?> 
     </div>
 
      <!-- <div class="form-group col-md-6">
@@ -139,7 +139,7 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
     </div-->
 
      <div class="form-group col-md-6">
-          <?= $form->field($model, 'team_id')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el equipo de ventas','style'=>'width:400px']);?> 
+          <?= $form->field($model, 'team_name')->dropDownList($SchedulerList1,['prompt'=>'Seleccione el equipo de ventas','style'=>'width:400px']);?> 
     </div>
 
     <!--<div class="form-group col-md-6">
@@ -168,7 +168,7 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
     </div>-->
 
 
-    <div class="form-group col-md-6">
+   <div class="form-group col-md-6">
          <?=$form->field($model, 'user_id')->dropDownList($SchedulerList2,['prompt'=>'Seleecione el email de usuario asignado','style'=>'width:400px']);?>  <!--Queda pendiente para poder ponerlo como la parte de cobertura ****-->
     </div>
 
@@ -248,7 +248,7 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
     </div>-->
 
     <div class="form-group col-md-6">
-         <?= $form->field($model, 'country_id')->dropDownList($SchedulerList3,['prompt'=>'Seleecione el pais','style'=>'width:400px']);?> 
+         <?= $form->field($model, 'country_name')->dropDownList($SchedulerList3,['prompt'=>'Seleecione el pais','style'=>'width:400px']);?> 
     </div>
 
 
@@ -284,6 +284,9 @@ $SchedulerList4=ArrayHelper::map($Scheduler4,'id','name');
           <?= $form->field($model, 'write_date')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Email del Cliente']) ?> 
     </div>
 
+     <div class="form-group col-md-6">
+          <?= $form->field($model, 'trial242')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Email del Cliente']) ?> 
+    </div>-->
 
   </div>
 

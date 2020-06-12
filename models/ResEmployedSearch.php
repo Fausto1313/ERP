@@ -14,8 +14,9 @@ Importamos parte de las reglas del modelo     */
     public function rules()
     {
         return [
-            [['Id', 'Id_Comp', 'E_Nomina', 'ID_Partner'], 'integer'],
-            [['N_Empleado', 'E_Apellidos', 'F_Creacion'], 'safe'],
+            [['Id', 'E_Nomina', 'ID_Partner',  'codigo_postal'], 'integer'],
+            [['N_Empleado', 'E_Apellidos', 'F_Creacion', 'birthday'], 'safe'],
+            [['Id_Comp', 'active', 'gender', 'marital', 'street', 'ciudad', 'department_id', 'country_id','work_phone', 'mobile_phone', 'work_email', 'work_location'], 'string'],
         ];
     }
 
@@ -51,6 +52,22 @@ Importamos parte de las reglas del modelo     */
             'E_Nomina' => $this->E_Nomina,
             'F_Creacion' => $this->F_Creacion,
             'ID_Partner' => $this->ID_Partner,
+
+            'active' => $this->active,
+            'gender' => $this->gender,
+            'marital' => $this->marital,
+            'birthday' => $this->birthday,
+            'department_id' => $this->department_id,
+            'street' => $this->street,
+            'codigo_postal' => $this->codigo_postal,
+            'ciudad' => $this->ciudad,
+            'country_id' => $this->country_id,
+            'work_phone' => $this->work_phone,
+            'mobile_phone' => $this->mobile_phone,
+            'work_email' => $this->work_email,
+            'work_location' => $this->work_location,
+
+
         ]);
 
         $query->andFilterWhere(['like', 'N_Empleado', $this->N_Empleado])

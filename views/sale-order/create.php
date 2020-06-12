@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 
 
-$this->title = 'Create Sale Order';
-$this->params['breadcrumbs'][] = ['label' => 'Sale Orders', 'url' => ['index']];
+$this->title = 'Crear Presupuesto';
+$this->params['breadcrumbs'][] = ['label' => 'Presupuestos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sale-order-create">

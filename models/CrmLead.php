@@ -14,12 +14,12 @@ class CrmLead extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email_cc', 'email_normalized', 'name', 'email_from', 'website', 'description', 'contact_name', 'partner_name', 'type', 'priority', 'referred', 'phone_state', 'email_state', 'street', 'street2', 'zip', 'city', 'phone', 'mobile', 'function'], 'string'],
-            [['message_main_attachment_id', 'message_bounce', 'campaign_id', 'source_id', 'medium_id', 'partner_id', 'active', 'team_id', 'stage_id', 'user_id', 'color', 'state_id', 'country_id', 'lang_id', 'title', 'company_id', 'lost_reason', 'create_uid', 'write_uid'], 'integer'],
+            [['email_cc', 'email_normalized', 'name', 'email_from', 'website', 'description', 'contact_name', 'partner_name', 'type', 'priority', 'referred', 'phone_state', 'email_state', 'street', 'street2', 'zip', 'active', 'country_name', 'team_name', 'company_name', 'city', 'phone', 'mobile', 'function'], 'string'],
+            [['message_main_attachment_id', 'message_bounce', 'campaign_id', 'source_id', 'medium_id', 'partner_id', 'team_id', 'stage_id', 'user_id', 'color', 'state_id', 'country_id', 'lang_id', 'title', 'company_id', 'lost_reason', 'create_uid', 'write_uid'], 'integer'],
             [['name', 'type'], 'required'],
             [['date_action_last', 'date_closed', 'date_open', 'date_last_stage_update', 'date_conversion', 'date_deadline', 'create_date', 'write_date'], 'safe'],
             [['day_open', 'day_close', 'probability', 'automated_probability', 'planned_revenue', 'expected_revenue'], 'number'],
-   
+            [['trial242'], 'string', 'max' => 1],
             [['campaign_id'], 'exist', 'skipOnError' => true, 'targetClass' => UtmCampaign::className(), 'targetAttribute' => ['campaign_id' => 'id']],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCompany::className(), 'targetAttribute' => ['company_id' => 'id']],
             [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => ResCountry::className(), 'targetAttribute' => ['country_id' => 'id']],
@@ -57,6 +57,7 @@ class CrmLead extends \yii\db\ActiveRecord
             'email_from' => 'Email From',
             'website' => 'Website',
             'team_id' => 'Equipo de Ventas',
+            'team_name' => 'Equipo de Ventas',
             'description' => 'Descripcion',
             'contact_name' => 'Cliente',
             'partner_name' => 'Cliente',
@@ -67,7 +68,7 @@ class CrmLead extends \yii\db\ActiveRecord
             'user_id' => 'Email Usuario asignado',
             'referred' => 'Referred',
             'date_open' => 'Fecha  abierta de oportunidad',
-            'day_open' => 'Day Open',
+            'day_open' => 'Dia abierta de oportunidad',
             'day_close' => 'Day Close',
             'date_last_stage_update' => 'Date Last Stage Update',
             'date_conversion' => 'Date Conversion',
@@ -85,18 +86,20 @@ class CrmLead extends \yii\db\ActiveRecord
             'city' => 'Ciudad',
             'state_id' => 'State ID',
             'country_id' => 'Pais',
+            'country_name' => 'Pais',
             'lang_id' => 'Lang ID',
             'phone' => 'Telefono',
             'mobile' => 'Celular',
             'function' => 'Funcion',
             'title' => 'Title',
             'company_id' => 'Compañia',
+            'company_name' => 'Compañia',
             'lost_reason' => 'Lost Reason',
             'create_uid' => 'Usuario',
             'create_date' => 'Fecha de Creacion',
             'write_uid' => 'Write Uid',
             'write_date' => 'Write Date',
- 
+            'trial242' => 'Trial242',
         ];
     }
 
@@ -107,12 +110,12 @@ class CrmLead extends \yii\db\ActiveRecord
 
     public function getCompany()
     {
-        return $this->hasOne(ResCompany::className(), ['id' => 'company_id']);
+        return $this->hasOne(ResCompany::className(), ['name' => 'company_name']);
     }
 
     public function getCountry()
     {
-        return $this->hasOne(ResCountry::className(), ['id' => 'country_id']);
+        return $this->hasOne(ResCountry::className(), ['name' => 'country_name']);
     }
 
     public function getCreateU()
@@ -142,7 +145,7 @@ class CrmLead extends \yii\db\ActiveRecord
 
     public function getPartner()
     {
-        return $this->hasOne(ResPartner::className(), ['id' => 'partner_id']);
+        return $this->hasOne(ResPartner::className(), ['name' => 'partner_name']);
     }
 
     public function getSource()
@@ -162,7 +165,7 @@ class CrmLead extends \yii\db\ActiveRecord
 
     public function getTeam()
     {
-        return $this->hasOne(CrmTeam::className(), ['id' => 'team_id']);
+        return $this->hasOne(CrmTeam::className(), ['name' => 'team_name']);
     }
 
     public function getTitle0()
