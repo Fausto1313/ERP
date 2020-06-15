@@ -87,7 +87,6 @@ class ProductTemplate extends \yii\db\ActiveRecord
             'purchase_line_warn' => 'purchase_line_warn',
             'purchase_line_warn_msg' => 'purchase_line_warn_msg',
             'service_to_purchase' => 'service_to_purchase',
-            //'image' => 'Imagen',
         ];
     }
 

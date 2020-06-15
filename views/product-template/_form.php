@@ -73,10 +73,6 @@ $SchedulerList2=ArrayHelper::map($Scheduler2,'name','name');
     <div class="form-group col-md-6">
          <?= $form->field($model, 'active')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Activo/Inactivo']) ?> 
     </div>
-
-    <!--<div class="form-group col-md-6">
-         <?= $form->field($model, 'image')->textInput(['maxlength' => true,'style'=>'width:400px','placeholder'=>'Subir archivo', 'type'=>'file', 'class'=>'form-control-file']) ?> 
-    </div>-->
    
 
      <div class="form-group col-md-6">
