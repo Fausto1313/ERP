@@ -270,7 +270,7 @@ AppAsset::register($this);
                         'icon' => 'briefcase',
                         'url' => 'http://localhost:8080/index.php?r=product-product%2Findex',
                         'items' => [
-                            ['label' => 'Productos', 'icon'=>'product', 'url'=>'http://localhost:8080/index.php?r=product-product%2Findex'],
+                            ['label' => 'Productos', 'icon'=>'product', 'url'=>'http://localhost:8080/index.php?r=product-template%2Findex'],
                             ['label' => 'Categoria de  Productos', 'icon'=>'product', 'url'=>'http://localhost:8080/index.php?r=product-category%2Findex'],
                         ]
                         
