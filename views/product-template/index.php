@@ -3,15 +3,16 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-$this->title = 'Categorias de Productos';
+
+$this->title = 'Productos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="product-category-index">
+<div class="product-template-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Crear Categoria', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Producto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -22,17 +23,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            //'parent_path:ntext',
-            'name:ntext',
-            'complete_name:ntext',
-            //'parent_id',
+            //'id',
+            'name',
+            'type',
+            'categ_name',
+            'active',
+            //'barcode:ntext',
+            //'combination_indices:ntext',
+            //'volume',
+            //'weight',
+            //'can_image_variant_1024_be_zoomed',
             //'create_uid',
             //'create_date',
             //'write_uid',
             //'write_date',
-            //'removal_strategy_id',
-            //'trial362',
+            //'trial375',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
