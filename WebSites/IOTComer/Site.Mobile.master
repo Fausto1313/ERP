@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Mobile.master.cs" Inherits="Site_Mobile" %>
+
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Internet de las Cosas</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/recursos/risc.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+    
+           <nav class="navbar navbar-inverse bg-inverse navbar-fixed-top " style="background-image: url('/recursos/std_themelet1_style2_bg.png'); background-repeat:repeat">
+            <nav class="container">
+                <div class="navbar-header">
+                    <button type="button" style="background-image: url('/recursos/std_themelet1_style2_bg.png'); background-repeat:repeat" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="Default.aspx" style="color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: xx-large; font-weight: bold; height: 9px; width: 74px;">RISC </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <div>
+                    </div>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/About">Acerca de</a></li>
+                                <li><a runat="server" href="~/Contact">Contacto</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+                </div>
+            </nav>
+            </nav>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+         <friendlyUrls:ViewSwitcher ID="ViewSwitcher1" runat="server"/>
+       <nav class="navbar navbar-relative-bottom">
+            <footer class="panel-footer" style="background-image:url('/recursos/std_themelet1_style2_bg.png'); background-repeat: repeat; ">
+            <p style="color: white; font-size: large; font-family: Verdana, Geneva, Tahoma, sans-serif;" class="text-center">powered by&nbsp;&nbsp; <span class="auto-style1"><strong style="color: #CC6600">RISC</strong></span></p>
+                <p style="color: #CC6600; font-family: Arial, Helvetica, sans-serif; font-weight: bold; width: 100%; height: 40px;" class="text-center">
+                    Copyright <%: DateTime.Now.Year %> RISC</p>
+        </footer>
+       </nav>
+    </form>
+</body>
+</html>

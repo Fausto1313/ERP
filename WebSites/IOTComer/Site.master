@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Internet de las Cosas</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/recursos/risc.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+           <nav class="navbar navbar-inverse bg-inverse navbar-fixed-top " style="background: rgba(255,255,255,1);
+            background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(37,95,194,1) 45%, rgba(22,83,181,1) 50%, rgba(14,69,158,1) 58%, rgba(13,47,133,1) 75%, rgba(2,15,55,1) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(1%, rgba(255,255,255,1)), color-stop(45%, rgba(37,95,194,1)), color-stop(50%, rgba(22,83,181,1)), color-stop(58%, rgba(14,69,158,1)), color-stop(75%, rgba(13,47,133,1)), color-stop(100%, rgba(2,15,55,1)));
+            background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(37,95,194,1) 45%, rgba(22,83,181,1) 50%, rgba(14,69,158,1) 58%, rgba(13,47,133,1) 75%, rgba(2,15,55,1) 100%);
+            background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(37,95,194,1) 45%, rgba(22,83,181,1) 50%, rgba(14,69,158,1) 58%, rgba(13,47,133,1) 75%, rgba(2,15,55,1) 100%);
+            background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(37,95,194,1) 45%, rgba(22,83,181,1) 50%, rgba(14,69,158,1) 58%, rgba(13,47,133,1) 75%, rgba(2,15,55,1) 100%);
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(37,95,194,1) 45%, rgba(22,83,181,1) 50%, rgba(14,69,158,1) 58%, rgba(13,47,133,1) 75%, rgba(2,15,55,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#020f37', GradientType=1 ); background-repeat:repeat; opacity:0.9;">         <nav class="container">
+                <div class="navbar-header">
+                    <button type="button" style="background-image: url('/recursos/std_themelet1_style2_bg.png'); background-repeat:repeat" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        </div>
+                <div class="navbar-collapse collapse">
+                    <div>
+                    </div>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/About">Acerca de</a></li>
+                                <li><a runat="server" href="~/Contact">Contacto</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+                </div>
+            </nav>
+            </nav>
+    
+           <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+           </div>
+       <footer class="panel-footer" style="background: rgba(27,35,87,1);
+                background: -moz-linear-gradient(left, rgba(27,35,87,1) 0%, rgba(2,15,55,1) 0%, rgba(13,47,133,1) 25%, rgba(14,69,158,1) 42%, rgba(22,83,181,1) 50%, rgba(37,95,194,1) 55%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(27,35,87,1)), color-stop(0%, rgba(2,15,55,1)), color-stop(25%, rgba(13,47,133,1)), color-stop(42%, rgba(14,69,158,1)), color-stop(50%, rgba(22,83,181,1)), color-stop(55%, rgba(37,95,194,1)), color-stop(99%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+                background: -webkit-linear-gradient(left, rgba(27,35,87,1) 0%, rgba(2,15,55,1) 0%, rgba(13,47,133,1) 25%, rgba(14,69,158,1) 42%, rgba(22,83,181,1) 50%, rgba(37,95,194,1) 55%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+                background: -o-linear-gradient(left, rgba(27,35,87,1) 0%, rgba(2,15,55,1) 0%, rgba(13,47,133,1) 25%, rgba(14,69,158,1) 42%, rgba(22,83,181,1) 50%, rgba(37,95,194,1) 55%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+                background: -ms-linear-gradient(left, rgba(27,35,87,1) 0%, rgba(2,15,55,1) 0%, rgba(13,47,133,1) 25%, rgba(14,69,158,1) 42%, rgba(22,83,181,1) 50%, rgba(37,95,194,1) 55%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+                background: linear-gradient(to right, rgba(27,35,87,1) 0%, rgba(2,15,55,1) 0%, rgba(13,47,133,1) 25%, rgba(14,69,158,1) 42%, rgba(22,83,181,1) 50%, rgba(37,95,194,1) 55%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b2357', endColorstr='#ffffff', GradientType=1 ); background-repeat: repeat; align-self:flex-end;
+                position: relative;
+                width: 100%;
+                text-align: center;
+                color: #000;
+                margin:0;
+                height:60px;
+                left: 0;
+                bottom: 0;">
+                 <div class="textobri">           
+                <p style="color: #FFF; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" class="text-center">
+                   © Copyright <%: DateTime.Now.Year %> por RISC. Todos los Derechos Reservados.</p></div>
+            </footer>
+    </form>    
+</body>
+</html>
