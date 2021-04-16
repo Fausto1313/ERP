@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Debug="true" CodeFile="IFTTTService.aspx.cs" Inherits="IFTTTService" %>
